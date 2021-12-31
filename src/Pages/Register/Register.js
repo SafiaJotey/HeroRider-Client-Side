@@ -1,7 +1,7 @@
 import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import login from '../../Images/login.png'
+import login from '../../Images/login.jpg'
 import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from './../../Components/Hooks/useAuth';
 
@@ -30,7 +30,7 @@ const Register = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography style={{ color:'#105652'}} variant="body1" gutterBottom>Register</Typography>
+                    <Typography style={{ color:'#85311b'}} variant="body1" gutterBottom>Register</Typography>
                     {!isLoading && <form onSubmit={handleLoginSubmit}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -64,11 +64,11 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
 
-                        <Button style={{ background:'#105652'}} sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
+                        <Button style={{ background:'#85311b'}} sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/login">
-                            <Button style={{ color:'#105652'}} variant="text">Already Registered? Please Login</Button>
+                            <Button style={{ color:'#85311b'}} variant="text">Already Registered? Please Login</Button>
                         </NavLink>
                     </form>}
                     {isLoading && <CircularProgress />}

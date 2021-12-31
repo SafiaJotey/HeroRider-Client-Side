@@ -1,9 +1,10 @@
 import React from 'react';
 import './Navigation.css';
-import { Navbar,Container, Nav } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import useAuth from './../Hooks/useAuth';
 const Navigation = () => {
+  const {user,logout}=useAuth();
   return (
     <>
       
@@ -13,20 +14,33 @@ const Navigation = () => {
 <Navbar.Brand as={Link} to="/home" className="logo" >Hero Rider</Navbar.Brand>
 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 <Navbar.Collapse id="responsive-navbar-nav">
-  <Nav className="ms-auto d-flex  align-items-center">
-    <Nav.Link as={Link} to="/home" >Home</Nav.Link>
-    
-    <Nav.Link as={Link} to="/login" >Login</Nav.Link>
-     </Nav>
-     {/* <Nav className="ms-auto d-flex  align-items-center">
-    
-     </Nav>
-     <Nav className="ms-auto d-flex  align-items-center">
-    
-     </Nav> */}
-  
-  
-</Navbar.Collapse>
+      <Nav className="ms-auto d-flex  align-items-center">
+        <Nav.Link as={Link} to="/home" >Home</Nav.Link>
+        
+      
+     
+   
+        {user?.email?
+        <div className="d-md-flex  align-items-center">
+          
+
+          <Navbar.Text>
+        Signed in as: <a href="#login">{
+        user.displayName? `${user?.displayName}`:`${user?.email}`
+        }</a>
+       
+       </Navbar.Text>
+         <Nav.Link as={Link} to="/home"><Button onClick={logout} variant="light">Logout</Button> {' '}</Nav.Link>
+        </div>:
+        
+        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+      }
+        
+        
+        
+      </Nav>
+      
+    </Navbar.Collapse>
 </Container>
 </Navbar>
   </>

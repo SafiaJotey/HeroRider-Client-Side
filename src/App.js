@@ -5,6 +5,10 @@ import Home from './Pages/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navigation from './Components/Navigation/Navigation';
 import Footer from './Components/Footer/Footer';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import Error from './Pages/Error/Error';
+import AuthProvider from './Components/Context/AuthProvider';
 
 
 
@@ -13,8 +17,8 @@ import Footer from './Components/Footer/Footer';
 function App() {
   return (
     <div className="App">
-       <AuthProvider></AuthProvider>
-      <Router>
+       <AuthProvider>
+       <Router>
         
         <Switch>
           <Route exact path="/">
@@ -74,6 +78,8 @@ function App() {
         
       </Router>
    
+       </AuthProvider>
+    
 
  
 
