@@ -1,0 +1,27 @@
+.about img{
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 20% 0 20% 0;
+}
+.about{
+    color: rgb(59, 58, 58);
+    margin:100px auto;
+}
+.about h1{
+    color: #85311b;
+    font-weight: 700;
+    margin-bottom: 62px;
+    
+}
+.about h2{
+    color: #85311b;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.about h3{
+    font-weight: 700;
+    font-size: 20px;
+}
+.about p{
+    font-size: 20px;
+}

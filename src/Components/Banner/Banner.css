@@ -1,0 +1,110 @@
+
+.btn{
+    padding: 10px 20px;
+    background-color: #85311b;
+    color: white;
+    border: 2px solid #cc1b1b;
+    font-weight: 700;
+}
+.btn:hover{
+    background-color: transparent;
+    color:#cc1b1b;
+    
+
+}
+img{
+    max-height: 90vh;
+}
+
+.banner{
+   min-height: 90vh;
+    
+   
+}
+.banner img{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+.banner .overlay{
+    background-color: rgba(0, 0, 0, 0.701);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 2;
+
+}
+.element{
+    text-align: left;
+    width:50%;
+    padding-right: 10px;
+    
+   
+    
+}
+.element h3{
+    font-size: 50px;
+    margin-top: -400px;
+    color: white;
+}
+.element p{
+    font-size: 20px;
+    margin: 20px 0;
+   
+}
+
+
+@media only screen and (max-width : 460px) {
+    .banner{
+        min-height: 90vh;
+        
+       
+    }
+    img{
+        min-height: 90vh;
+    }
+    .element{
+        width: 60%;
+        text-align: center;
+        padding-right: 20px;
+    }
+    .element h3{
+        font-size: 22px;
+        margin-top: 0px;
+    }
+    .element p{
+        font-size: 12px;
+        margin: 10px 0;
+       
+    }
+    }
+
+@media only screen and (max-width : 768px) {
+    .banner{
+        min-height: 90vh;
+        
+       
+    }
+    img{
+        min-height: 90vh;
+    }
+    .element{
+        width: 80%;
+        text-align: center;
+        padding-right: 40px;
+    }
+    .element h3{
+        font-size: 30px;
+        margin-top: 0px;
+        
+    }
+    .element p{
+        font-size: 14px;
+        margin: 10px 0;
+       
+    }
+    }
+
+ 
