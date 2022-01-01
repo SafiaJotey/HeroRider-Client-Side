@@ -3,12 +3,14 @@ import './App.css';
 import Home from './Pages/Home/Home';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navigation from './Components/Navigation/Navigation';
-import Footer from './Components/Footer/Footer';
-import Login from './Pages/Login/Login';
-import Register from './Pages/Register/Register';
+
 import Error from './Pages/Error/Error';
 import AuthProvider from './Components/Context/AuthProvider';
+import JoinUs from './Pages/JoinUs/JoinUs/JoinUs';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Learner/Learner';
+import Learner from './Pages/Register/Learner/Learner';
+import Rider from './Pages/Register/Rider/Rider';
 
 
 
@@ -28,6 +30,19 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          {/* <Route path="/join">
+            <JoinUs></JoinUs>
+          </Route> */}
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register/learner">
+            <Learner></Learner>
+          </Route>
+          <Route path="/register/rider">
+            <Rider></Rider>
+          </Route>
+
 
 {/*          
           <PrivateRoute path="/booking/:serviceId">
@@ -55,16 +70,14 @@ function App() {
           </Route>
           <Route path="/review">
           <AddReviews></AddReviews>
-          </Route> */}
+          </Route> 
           <Route path="/login">
             <Navigation></Navigation>
             <Login></Login>
             <Footer></Footer>
           </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
-          {/* <PrivateRoute path="/ServiceDetails/:id">
+          
+          <PrivateRoute path="/ServiceDetails/:id">
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>
  */}

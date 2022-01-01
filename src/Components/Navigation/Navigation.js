@@ -16,11 +16,12 @@ const Navigation = () => {
 <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="ms-auto d-flex  align-items-center">
         <Nav.Link as={Link} to="/home" >Home</Nav.Link>
+        <Nav.Link as={Link} to="/login" >Login</Nav.Link>
         
       
      
    
-        {user?.email?
+        {/* {user?.email?
         <div className="d-md-flex  align-items-center">
           
 
@@ -36,7 +37,7 @@ const Navigation = () => {
         <Nav.Link as={Link} to="/login">Login</Nav.Link>
       }
         
-        
+         */}
         
       </Nav>
       

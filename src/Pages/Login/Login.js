@@ -50,10 +50,19 @@ const Login = () => {
                             variant="standard" />
 
                         <Button  style={{ background:'#85311b'}}sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <br />
+                        <small>New to Hero Rider?</small>
+                        <br />
                         <NavLink 
                             style={{ textDecoration: 'none' }}
-                            to="/register">
-                            <Button  style={{ color:'#85311b'}}variant="text">New User? Please Register</Button>
+                            to="/register/learner">
+                            <Button  style={{ color:'#85311b'}}variant="text">Register as Learner</Button>
+                        </NavLink>
+                        <small>or</small>
+                        <NavLink 
+                            style={{ textDecoration: 'none' }}
+                            to="/register/rider">
+                            <Button  style={{ color:'#85311b'}}variant="text">Register as rider</Button>
                         </NavLink>
                         {isLoading && <CircularProgress />}
                         {user?.email && <Alert severity="success">Login successfully!</Alert>}

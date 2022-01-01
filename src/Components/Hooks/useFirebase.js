@@ -16,7 +16,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name, history) => {
+    const registerUser = (email, password, name,age,number,address,profile,nid,license="null", area='null',vehicle,vehicleName="null",namePlate="null",history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -24,7 +24,8 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to the database
-                saveUser(email, name, 'POST');
+                
+                saveUser(email, name,age,number,address,profile,nid,license, area,vehicle,vehicleName,namePlate="null",'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -86,7 +87,7 @@ const useFirebase = () => {
     }, [auth])
 
     useEffect(() => {
-        fetch(`https://morning-sea-41407.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:3000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -101,9 +102,9 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
-        fetch('https://morning-sea-41407.herokuapp.com/users', {
+    const saveUser = (email, displayName,age,number,address,profile,nid,license="null", area='null',vehicle,vehicleName="null",namePlate, method) => {
+        const user = { email, displayName,age,number,address,profile,nid,license, area,vehicle,vehicleName,namePlate};
+        fetch('http://localhost:3000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
