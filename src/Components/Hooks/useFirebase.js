@@ -16,7 +16,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name,age,number,address,profile,nid,license="null", area='null',vehicle,vehicleName="null",namePlate="null",history) => {
+    const registerUser = (email, password, name,age,number,address,nid, model="null",history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -25,7 +25,7 @@ const useFirebase = () => {
                 setUser(newUser);
                 // save user to the database
                 
-                saveUser(email, name,age,number,address,profile,nid,license, area,vehicle,vehicleName,namePlate="null",'POST');
+                saveUser(email, password, name,age,number,address,nid, model,'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -102,8 +102,8 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const saveUser = (email, displayName,age,number,address,profile,nid,license="null", area='null',vehicle,vehicleName="null",namePlate, method) => {
-        const user = { email, displayName,age,number,address,profile,nid,license, area,vehicle,vehicleName,namePlate};
+    const saveUser = (email, displayName,age,number,address,nid, model, method) => {
+        const user = { email, displayName,age,number,address,nid,model};
         fetch('http://localhost:3000/users', {
             method: method,
             headers: {

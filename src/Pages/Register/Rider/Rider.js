@@ -23,7 +23,7 @@ const Rider = () => {
             alert('Your password did not match');
             return
         }
-        registerUser(loginData.email, loginData.password, loginData.name,loginData.age,loginData.number,loginData.loginData.address,loginData.profile,loginData.nid,loginData.license,loginData.area,loginData.vehicle,loginData.vehicleName,loginData.namePlate, history);
+        registerUser(loginData.email, loginData.password, loginData.name,loginData.age,loginData.number,loginData.address,loginData.nid,loginData.model, history);
         e.preventDefault();
     }
     return (
